@@ -34,7 +34,7 @@ pipeline {
          steps {
 
             echo 'deploying the applicaiton...'
-            echo '${env.GIT_BRANCH}'
+            echo ${env.GIT_BRANCH}
    
          }
 
