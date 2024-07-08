@@ -29,6 +29,7 @@ pipeline {
       stage("deploy") {
          steps {
             echo 'deploying the applicaiton...'
+            echo "$(env.GIT_BRANCH)"
             withCredentials([[$class: 'UsernamePasswordMultiBinding',
                credentialsId: 'admin_user_credentials',
                usernameVariable: 'admin_user',
