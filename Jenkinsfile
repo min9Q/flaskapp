@@ -7,12 +7,12 @@ pipeline {
    stages {
       stage("Build") {
          steps {
-               sh 'docker build -t flask-jenkins:v1.1.1 .'
+               sh 'docker build -t flask-jenkins:v1.0.1 .'
          }
       }
       stage("Tag and Push") {
          steps {
-              sh "docker tag jenkins-pipeline_web:v1.1.1 ${DOCKER_USER_ID}/jenkins-app:${BUILD_NUMBER}"
+              sh "docker tag jenkins-pipeline_web:v1.0.1 ${DOCKER_USER_ID}/jenkins-app:${BUILD_NUMBER}"
                sh "docker login -u ${DOCKER_USER_ID}-p ${DOCKER_USER_PASSWORD}"
                sh "docker push ${DOCKER_USER_ID}/jenkins-app:${BUILD_NUMBER}"
          }
