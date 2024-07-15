@@ -2,9 +2,11 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: flaskpod
+  labels:
+    app: flaskapp
 spec:
   containers:
-  - name: flask
+  - name: flaskapp
     image: min9q/flaskapp
     ports:
     - containerPort: 5000
